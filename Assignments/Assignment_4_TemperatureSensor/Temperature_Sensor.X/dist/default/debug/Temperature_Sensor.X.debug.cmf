@@ -12,7 +12,7 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $build/default/debug/main.o
-absdata - 0 0 0 F2 1 1
+absdata - 0 0 0 F6 1 1
 config CONFIG 4 300000 300000 A 1 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -32,11 +32,11 @@ BANK6 600-6FF 1
 BANK7 700-7FF 1
 BANK8 800-8FF 1
 BANK9 900-9FF 1
-CONST F2-1FFFF 1
+CONST F6-1FFFF 1
 IDLOC 200000-20000F 1
 SMALLCONST 2000-FFFF 1
 SMALLCONST 12000-1FFFF 1
-CODE F2-1FFFF 1
+CODE F6-1FFFF 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
@@ -59,7 +59,7 @@ BANK28 1C00-1CFF 1
 BANK29 1D00-1DFF 1
 BANK30 1E00-1EFF 1
 BANK31 1F00-1FFF 1
-BIGRAM F2-1FFF 1
+BIGRAM F6-1FFF 1
 BIGSFR 3800-3FFF 1
 COMRAM 0-5F 1
 EEDATA 310000-3103FF 1
@@ -79,83 +79,89 @@ MEDIUMCONST 12000-1FFFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $build/default/debug/main.o
-0 absdata ABS >68:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-20 absdata ABS >76:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-22 absdata ABS >77:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-24 absdata ABS >78:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-2A absdata ABS >79:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-30 absdata ABS >80:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-36 absdata ABS >82:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-38 absdata ABS >83:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-3A absdata ABS >85:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-3C absdata ABS >86:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-3E absdata ABS >88:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-40 absdata ABS >89:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-42 absdata ABS >90:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-46 absdata ABS >93:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-48 absdata ABS >94:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-4A absdata ABS >95:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-4C absdata ABS >97:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-4E absdata ABS >98:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-50 absdata ABS >99:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-52 absdata ABS >100:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-54 absdata ABS >101:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-56 absdata ABS >102:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-5A absdata ABS >103:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-5E absdata ABS >104:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-60 absdata ABS >106:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-62 absdata ABS >107:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-64 absdata ABS >108:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-66 absdata ABS >109:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-68 absdata ABS >110:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-6A absdata ABS >111:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-6E absdata ABS >112:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-72 absdata ABS >117:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-74 absdata ABS >118:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-76 absdata ABS >120:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-78 absdata ABS >121:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-7A absdata ABS >122:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-7E absdata ABS >125:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-80 absdata ABS >126:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-82 absdata ABS >127:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-84 absdata ABS >129:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-86 absdata ABS >130:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-88 absdata ABS >131:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-8A absdata ABS >132:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-8C absdata ABS >133:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-8E absdata ABS >134:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-92 absdata ABS >135:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-96 absdata ABS >136:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-98 absdata ABS >138:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-9A absdata ABS >139:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-9C absdata ABS >140:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-9E absdata ABS >141:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-A0 absdata ABS >142:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-A2 absdata ABS >143:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-A6 absdata ABS >144:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-AA absdata ABS >147:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-AC absdata ABS >151:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-AE absdata ABS >152:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-B2 absdata ABS >158:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-B4 absdata ABS >159:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-B8 absdata ABS >162:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-BA absdata ABS >163:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-BE absdata ABS >165:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-C2 absdata ABS >168:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-C4 absdata ABS >169:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-C6 absdata ABS >171:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-C8 absdata ABS >172:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-CE absdata ABS >174:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-D2 absdata ABS >177:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-D4 absdata ABS >178:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-D6 absdata ABS >180:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-D8 absdata ABS >181:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-DE absdata ABS >183:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-E2 absdata ABS >186:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-E4 absdata ABS >187:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-E6 absdata ABS >189:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-E8 absdata ABS >190:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
-EE absdata ABS >192:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Untitled/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+0 absdata ABS >68:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+20 absdata ABS >76:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+22 absdata ABS >77:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+24 absdata ABS >78:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+26 absdata ABS >79:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+28 absdata ABS >80:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+2A absdata ABS >81:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+2C absdata ABS >82:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+2E absdata ABS >83:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+30 absdata ABS >84:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+32 absdata ABS >85:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+34 absdata ABS >87:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+36 absdata ABS >88:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+38 absdata ABS >89:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+3E absdata ABS >91:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+40 absdata ABS >92:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+42 absdata ABS >94:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+44 absdata ABS >95:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+46 absdata ABS >96:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+4A absdata ABS >99:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+4C absdata ABS >100:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+4E absdata ABS >101:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+50 absdata ABS >103:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+52 absdata ABS >104:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+54 absdata ABS >105:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+56 absdata ABS >106:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+58 absdata ABS >107:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+5A absdata ABS >108:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+5E absdata ABS >109:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+62 absdata ABS >110:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+64 absdata ABS >112:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+66 absdata ABS >113:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+68 absdata ABS >114:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+6A absdata ABS >115:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+6C absdata ABS >116:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+6E absdata ABS >117:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+72 absdata ABS >118:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+76 absdata ABS >123:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+78 absdata ABS >124:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+7A absdata ABS >126:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+7C absdata ABS >127:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+7E absdata ABS >128:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+82 absdata ABS >131:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+84 absdata ABS >132:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+86 absdata ABS >133:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+88 absdata ABS >135:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+8A absdata ABS >136:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+8C absdata ABS >137:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+8E absdata ABS >138:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+90 absdata ABS >139:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+92 absdata ABS >140:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+96 absdata ABS >141:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+9A absdata ABS >142:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+9C absdata ABS >144:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+9E absdata ABS >145:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+A0 absdata ABS >146:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+A2 absdata ABS >147:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+A4 absdata ABS >148:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+A6 absdata ABS >149:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+AA absdata ABS >150:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+AE absdata ABS >153:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+B0 absdata ABS >157:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+B2 absdata ABS >158:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+B6 absdata ABS >164:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+B8 absdata ABS >165:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+BC absdata ABS >168:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+BE absdata ABS >169:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+C2 absdata ABS >171:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+C6 absdata ABS >174:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+C8 absdata ABS >175:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+CA absdata ABS >177:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+CC absdata ABS >178:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+D2 absdata ABS >180:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+D6 absdata ABS >183:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+D8 absdata ABS >184:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+DA absdata ABS >186:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+DC absdata ABS >187:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+E2 absdata ABS >189:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+E6 absdata ABS >192:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+E8 absdata ABS >193:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+EA absdata ABS >195:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+EC absdata ABS >196:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
+F2 absdata ABS >198:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Assignment_4_TemperatureSensor/Temperature_Sensor.X/main.asm
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -168,7 +174,7 @@ EE absdata ABS >192:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Un
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__Hspace_0 F2 0 ABS 0 - -
+__Hspace_0 F6 0 ABS 0 - -
 __Hspace_1 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 60000A 0 ABS 0 - -
@@ -216,7 +222,7 @@ __Hcode 0 0 ABS 0 code -
 __Hdata 0 0 ABS 0 data -
 __Lcode 0 0 ABS 0 code -
 __Ldata 0 0 ABS 0 data -
-__Habsdata F2 0 ABS 0 absdata -
+__Habsdata F6 0 ABS 0 absdata -
 __S0 0 0 ABS 0 - -
 __S1 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -

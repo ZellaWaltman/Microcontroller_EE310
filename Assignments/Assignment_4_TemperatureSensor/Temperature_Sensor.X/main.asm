@@ -73,14 +73,20 @@ _start:
     
     ; Clearing STATUS REG, contREG, and PortD
     ;-----------------------------------------
+    BANKSEL PORTD
+    CLRF PORTD,1 ; Initialize PortD
+    BANKSEL LATD
+    CLRF LATD,1 ; Initialize LATD
+    BANKSEL ANSELD
+    CLRF ANSELD,1 ; Digital I/O
+    BANKSEL TRISD
+    CLRF LATD,1 ; Initialize LATD
+    MOVLW 0b11111000 ; Hex 0xF8
+    MOVWF TRISD,1 ; PORTD2, PORTD1, and PORTD0 are Outputs, rest are Inputs
+    
     MOVLW 0x00
     MOVWF contReg,1
     MOVFF WREG,STATUS
-    MOVFF WREG,PORTD
-    MOVFF WREG, ANSELD
-    
-    MOVLW 0b11111000 ; Hex 0xF8
-    MOVWF TRISD,1 ; PORTD2, PORTD1, and PORTD0 are Outputs, rest are Inputs
     
     MOVLW 60
     MOVWF maxRef,1
