@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/Applications/microchip/xc8/v3.00/pic/dat/20241204225717_en.msgs \
   -cs -h+dist/default/debug/Temperature_Sensor.X.debug.sym \
   --cmf=dist/default/debug/Temperature_Sensor.X.debug.cmf -z -Q18F47K42 \
-  -o/tmp/xc2woPgHT/driver_tmp_3.o --fixupoverflow=error \
+  -o/tmp/xcJFOIuKA/driver_tmp_3.o --fixupoverflow=error \
   -ver=XC8 PIC(R) Assembler --fixupoverflow=lstwarn \
   -Mdist/default/debug/Temperature_Sensor.X.debug.map -E1 \
   -ACODE=00h-01FFFFh -ACONST=00h-01FFFFh \
@@ -36,7 +36,7 @@ Machine type is 18F47K42
                 Name                               Link     Load   Length Selector   Space Scale
 build/default/debug/main.o
                 config                           300000   300000        A        0       4
-                absdata                               0        0       F8        0       0
+                absdata                               0        0       FC        0       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
@@ -131,7 +131,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 config                           300000   300000        A         4
 
         CLASS   UNCLASSED
-                absdata                               0        0       F8         0
+                absdata                               0        0       FC         0
 
 
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
@@ -173,11 +173,11 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
-        BIGRAM           0000F8-001FFF             1F08
+        BIGRAM           0000FC-001FFF             1F04
         BIGSFR           003800-003FFF              800
-        CODE             0000F8-01FFFF            1FF08
+        CODE             0000FC-01FFFF            1FF04
         COMRAM           000000-00005F               60
-        CONST            0000F8-01FFFF            1FF08
+        CONST            0000FC-01FFFF            1FF04
         EEDATA           310000-3103FF              400
         IDLOC            200000-20000F               10
         MEDIUMCONST      002000-00FFFF             E000
@@ -189,10 +189,10 @@ UNUSED ADDRESS RANGES
 
                                   Symbol Table
 
-__H__absolute__ __absolute__ 000000  __Habsdata      absdata      0000F8
+__H__absolute__ __absolute__ 000000  __Habsdata      absdata      0000FC
 __Hcode         code         000000  __Hconfig       config       30000A
 __Hdata         data         000000  __Hedata        edata        000000
-__Hspace_0      (abs)        0000F8  __Hspace_1      (abs)        000000
+__Hspace_0      (abs)        0000FC  __Hspace_1      (abs)        000000
 __Hspace_3      (abs)        000000  __Hspace_4      (abs)        60000A
 __Hudata        udata        000000  __Hudata_acs    udata_acs    000000
 __Hudata_bank0  udata_bank0  000000  __Hudata_bank1  udata_bank1  000000

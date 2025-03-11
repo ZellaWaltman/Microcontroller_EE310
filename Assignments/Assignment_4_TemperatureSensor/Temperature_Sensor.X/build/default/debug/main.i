@@ -27,6 +27,7 @@
 ; Author: Zella Waltman
 ; Versions:
 ; V1.0: Original Program
+; V1.1: Initialized PORTD LEDs, fixed minor bugs
 ; Useful links:
 ; Datasheet: https:
 ; PIC18F Instruction Sets: https:
@@ -96,7 +97,7 @@
 
 
 ; config statements should precede project file includes.
-# 34 "main.asm" 2
+# 35 "main.asm" 2
 ;#include "C:\Users\student\Documents\myMPLABXProjects\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\ConfigureFile.inc"
 
 # 1 "/Applications/microchip/xc8/v3.00/pic/include/xc.inc" 1 3
@@ -32343,7 +32344,7 @@ stk_offset SET 0
 auto_size SET 0
 ENDM
 # 6 "/Applications/microchip/xc8/v3.00/pic/include/xc.inc" 2 3
-# 37 "main.asm" 2
+# 38 "main.asm" 2
 
 ;---------------------
 ; Program Inputs
@@ -32397,12 +32398,11 @@ _start:
 
     MOVLW 0x00
     MOVWF contReg,1
-    MOVFF WREG,STATUS
 
     MOVLW 60
     MOVWF maxRef,1
 
-    MOVLW -5
+    MOVLW -10
     MOVWF measuredTemp,1
     GOTO DECIMAL_Meas
 
@@ -32434,7 +32434,7 @@ D4:
     CPFSGT maxRef,1 ; If measuredTemp < 60 (max refTemp), skip next line
     NEGF measuredTemp,1 ; If measuredTemp > 60 (3Ch), 2's Complement, sets Negative Flag = 1
 
-    MOVLW 15
+    MOVLW 50
     MOVWF refTemp,1
     GOTO DECIMAL_Ref
 
@@ -32460,7 +32460,12 @@ D2:
     MOVFF numerator, 0x61 ; Store second digit in REG61
     MOVFF quotient, 0x62 ; Store last digit in REG62
 
+    ; Clear Status REG
+    MOVLW 0x00
+    MOVFF WREG,STATUS
+
     ; TEST if measured is greater by subtracting measuredTemp - refTemp & check STATUS
+    MOVLW 50
     SUBWF measuredTemp,0,0
 
     ; SPECIAL CASE: IF MEASURED TEMP IS ((STATUS) and 0FFh), 4, a:

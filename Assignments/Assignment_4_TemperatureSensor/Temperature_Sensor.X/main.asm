@@ -20,6 +20,7 @@
 ; Author: Zella Waltman
 ; Versions:
 ;       V1.0: Original Program
+;	V1.1: Initialized PORTD LEDs, fixed minor bugs
 ; Useful links: 
 ;       Datasheet: https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18(L)F26-27-45-46-47-55-56-57K42-Data-Sheet-40001919G.pdf 
 ;       PIC18F Instruction Sets: https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119448457.app4 
@@ -38,8 +39,8 @@
 ;---------------------
 ; Program Inputs
 ;---------------------
-#define	refTempInput 15
-#define	measuredTempInput -5
+#define	refTempInput 50
+#define	measuredTempInput -10
  
 ;---------------------
 ; Definitions
@@ -87,7 +88,6 @@ _start:
     
     MOVLW 0x00
     MOVWF contReg,1
-    MOVFF WREG,STATUS
     
     MOVLW 60
     MOVWF maxRef,1
@@ -150,7 +150,12 @@ D2:
     MOVFF numerator, 0x61 ; Store second digit in REG61
     MOVFF quotient, 0x62 ; Store last digit in REG62
     
+    ; Clear Status REG
+    MOVLW 0x00
+    MOVFF WREG,STATUS
+    
     ; TEST if measured is greater by subtracting measuredTemp - refTemp & check STATUS
+    MOVLW refTempInput
     SUBWF measuredTemp,0,0
     
     ; SPECIAL CASE: IF MEASURED TEMP IS NEGATIVE:
