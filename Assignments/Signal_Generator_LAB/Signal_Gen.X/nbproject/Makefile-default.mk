@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=
+SOURCEFILES_QUOTED_IF_SPACED=SignalGenLedSwitch.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=
-POSSIBLE_DEPFILES=
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/SignalGenLedSwitch.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/SignalGenLedSwitch.o.d
 
 # Object Files
-OBJECTFILES=
+OBJECTFILES=${OBJECTDIR}/SignalGenLedSwitch.o
 
 # Source Files
-SOURCEFILES=
+SOURCEFILES=SignalGenLedSwitch.asm
 
 
 
@@ -89,7 +89,23 @@ FINAL_IMAGE_NAME_MINUS_EXTENSION=${DISTDIR}/Signal_Gen.X.${IMAGE_TYPE}
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: pic-as-assembler
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/SignalGenLedSwitch.o: SignalGenLedSwitch.asm  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/SignalGenLedSwitch.o 
+	${MP_AS} -mcpu=PIC18F47K42 -c \
+	-o ${OBJECTDIR}/SignalGenLedSwitch.o \
+	SignalGenLedSwitch.asm \
+	 -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -misa=std -msummary=+mem,-psect,-class,-hex,-file,-sha1,-sha256,-xml,-xmlfull -fmax-errors=20 -mwarn=0 -xassembler-with-cpp
+	
 else
+${OBJECTDIR}/SignalGenLedSwitch.o: SignalGenLedSwitch.asm  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/SignalGenLedSwitch.o 
+	${MP_AS} -mcpu=PIC18F47K42 -c \
+	-o ${OBJECTDIR}/SignalGenLedSwitch.o \
+	SignalGenLedSwitch.asm \
+	  -mdfp="${DFP_DIR}/xc8"  -misa=std -msummary=+mem,-psect,-class,-hex,-file,-sha1,-sha256,-xml,-xmlfull -fmax-errors=20 -mwarn=0 -xassembler-with-cpp
+	
 endif
 
 # ------------------------------------------------------------------------------------

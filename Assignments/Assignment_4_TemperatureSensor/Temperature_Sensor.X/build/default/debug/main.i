@@ -32393,6 +32393,7 @@ _start:
     CLRF LATD,1 ; Initialize LATD
     MOVLW 0b11111000 ; Hex 0xF8
     MOVWF TRISD,1 ; PORTD2, PORTD1, and PORTD0 are Outputs, rest are Inputs
+    BANKSEL 0
 
     MOVLW 0x00
     MOVWF contReg,1

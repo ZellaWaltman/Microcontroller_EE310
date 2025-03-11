@@ -1,16 +1,8 @@
 ;---------------------
-; Title: Assignment 4, Temperature Sensor
+; Title: Signal Generation Lab
 ;---------------------
 ; Program Details:
-; The purpose of this program is to create a heating and cooling control system.
-; The desired temperature is set, and the system measures the actual temperature.
-; If the environment temperature is higher than the reference temperature, the 
-; cooling system will be turned on, PORTD2 will turn on, and the contReg will = 02h.
-; If the environment temperature is less than the reference temperature, the
-; heating systems will start, PORTD1 will turn on, and the contReg will = 01h.
-; Otherwise, no light will turn on, and contReg will be 00h. Additionally, this
-; program will convert the reference temperature and the measured temperature to
-; decimal values and store these values in 3 registers, respectively.
+; The purpose of this program is to 
     
 ; Inputs: measuredTempInput, refTempInput
 ; Outputs: PORTD
@@ -83,7 +75,6 @@ _start:
     CLRF LATD,1 ; Initialize LATD
     MOVLW 0b11111000 ; Hex 0xF8
     MOVWF TRISD,1 ; PORTD2, PORTD1, and PORTD0 are Outputs, rest are Inputs
-    BANKSEL 0
     
     MOVLW 0x00
     MOVWF contReg,1
@@ -200,3 +191,5 @@ LED_HOT:
     
 _END:   
 END
+
+
