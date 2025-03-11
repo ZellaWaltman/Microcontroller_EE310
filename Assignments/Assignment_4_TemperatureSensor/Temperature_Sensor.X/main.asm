@@ -39,8 +39,8 @@
 ;---------------------
 ; Program Inputs
 ;---------------------
-#define	refTempInput 50
-#define	measuredTempInput -10
+#define	refTempInput 10
+#define	measuredTempInput 50
  
 ;---------------------
 ; Definitions

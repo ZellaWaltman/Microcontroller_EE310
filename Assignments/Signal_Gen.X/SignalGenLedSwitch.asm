@@ -34,8 +34,8 @@
 ;---------------------
 ; Program Inputs
 ;---------------------
-Inner_loop  equ 3 // in decimal
-Outer_loop  equ 2
+Inner_loop  equ 255 // in decimal
+Outer_loop  equ 130
  
 ;---------------------
 ; Program Constants
