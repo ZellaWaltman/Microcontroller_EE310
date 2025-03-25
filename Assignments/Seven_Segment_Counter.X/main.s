@@ -2,16 +2,31 @@
 ; Title: Assignment 6, Seven Segment Counter
 ;---------------------
 ; Program Details:
-; The purpose of this program is to 
-    
-; Inputs: 
-; Outputs: 
+; The purpose of this program is to implement a 7 Segment Counter that will
+; increment or decrement depending on which button is pressed. If Button A is
+; pressed, the counter will increment from from 0 to F. If Button B is pressed,
+; the counter will decrement from from F to 0. If both buttons are pressed, the
+; counter will reset to 0. If no buttons are pressed, the counter will remain
+; the same. 
+; Inputs: Inner_loop, Outer_loop, PORTB0, PORTB3
+; PORTB Mapping (Buttons):
+;   RB0 - Button A
+;   RB3 - Button B
+; Outputs: PORTD
+; PORTD Mapping (7 Segment):
+;   RD0 - A
+;   RD1 - B
+;   RD2 - C
+;   RD3 - D
+;   RD4 - E
+;   RD5 - F
+;   RD6 - G
 ; Date: Mar 11, 2025
 ; File Dependencies / Libraries: None 
 ; Compiler: xc8, 3.00
 ; Author: Zella Waltman
 ; Versions:
-;       V1.0: 
+;       V1.0: Original Code
 ; Useful links: 
 ;       Datasheet: https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18(L)F26-27-45-46-47-55-56-57K42-Data-Sheet-40001919G.pdf 
 ;       PIC18F Instruction Sets: https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119448457.app4 
@@ -29,13 +44,6 @@
 ;---------------------
 Inner_loop  equ 255 // in decimal
 Outer_loop  equ 255
- 
-;---------------------
-; Definitions
-;---------------------
-;#define SWITCH    LATD,2
-;#define LED0      PORTD,1
-;#define LED1	  PORTD,2
 
 ;---------------------
 ; Program Constants
@@ -60,34 +68,28 @@ REG11   equ     11h
     GOTO _setupTBL
     
 main:
-    MOVFF TABLAT,PORTD
-    RCALL DELAY
+    MOVFF TABLAT,PORTD ; Move Current Table Latch into Port D (Output)
+    RCALL DELAY ; Call Delay Function
     
     MOVFF PORTB, 0x00 ; Load contents of PORTB into REG0
     
 ; IF only button A is pressed 
     MOVLW 0x01
     SUBWF 0x00,0 ; If REG0 = 0x01, only button A is pressed 
-    BZ CountUP
+    BZ CountUP ; Go to Count Up if zero flag is set (REG0 = 0x01)
 
 ; IF only button B is pressed     
     MOVLW 0x08
     SUBWF 0x00,0 ; If REG0 = 0x08, only button B is pressed 
-    BZ CountDOWN
+    BZ CountDOWN ; Go to Count Down if zero flag is set (REG0 = 0x08)
     
 ; IF BOTH buttons are pressed 
     MOVLW 0x09
     SUBWF 0x00,0 ; If REG0 = 0x09, both buttons are pressed
-    BZ _setupTBL
+    BZ _setupTBL ; Go to reset if zero flag is set (REG0 = 0x09)
 
 ; IF NO buttons are pressed: Do nothing, stay at the current counter value
    GOTO main
-
-rst:
-    MOVLW 0x00
-    MOVWF TBLPTRL
-    TBLRD* ; IF I HAVE TBLRD*, it will reset to 0 when no button is pressed, but if not, nothing happens when I press both buttons
-    GOTO main
     
 CountUP:
     MOVLW 0x0F
@@ -98,7 +100,7 @@ CountUP:
     TBLRD*
     GOTO main
 upAgain:
-    INCF TBLPTRL
+    INCF TBLPTRL ; Increment TBLPTRL
     TBLRD*
     GOTO main
 
@@ -111,10 +113,11 @@ CountDOWN:
     TBLRD*
     GOTO main
 downAgain:
-    DECF TBLPTRL
+    DECF TBLPTRL ; Decrement TBLPTRL
     TBLRD*
     GOTO main
 
+; TIME DELAY FUNCTION
 DELAY:
     RCALL loop1
     RCALL loop1
@@ -145,7 +148,7 @@ _setupPortB:
     CLRF ANSELB ; Digital I/O
     BANKSEL TRISB
     MOVLW 0b00001001
-    MOVWF TRISB ; PORTB0 and PORTB4 are inputs
+    MOVWF TRISB ; PORTB0 and PORTB3 are inputs
     tblrd*
     RETURN
 
@@ -164,6 +167,7 @@ _setupPortD:
     RETURN
 
 ; Initializing Table Pointer to begin at Address 200h
+;-----------------------------------------------------
 _setupTBL:
     MOVLW 0x00
     MOVWF TBLPTRL
