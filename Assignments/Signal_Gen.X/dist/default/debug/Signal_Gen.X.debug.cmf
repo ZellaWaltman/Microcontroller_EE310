@@ -11,8 +11,8 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$build/default/debug/SignalGenLedSwitch.o
-absdata - 0 0 0 6C 1 1
+$build/default/debug/Test.o
+absdata - 0 0 0 C 1 1
 config CONFIG 4 300000 300000 A 1 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -32,11 +32,11 @@ BANK6 600-6FF 1
 BANK7 700-7FF 1
 BANK8 800-8FF 1
 BANK9 900-9FF 1
-CONST 6C-1FFFF 1
+CONST C-1FFFF 1
 IDLOC 200000-20000F 1
 SMALLCONST 2000-FFFF 1
 SMALLCONST 12000-1FFFF 1
-CODE 6C-1FFFF 1
+CODE C-1FFFF 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
@@ -59,7 +59,7 @@ BANK28 1C00-1CFF 1
 BANK29 1D00-1DFF 1
 BANK30 1E00-1EFF 1
 BANK31 1F00-1FFF 1
-BIGRAM 6C-1FFF 1
+BIGRAM C-1FFF 1
 BIGSFR 3800-3FFF 1
 COMRAM 0-5F 1
 EEDATA 310000-3103FF 1
@@ -78,45 +78,11 @@ MEDIUMCONST 12000-1FFFF 1
 # are in ascending order of addresses.
 # All other numeric values are in decimal.
 %LINETAB
-$build/default/debug/SignalGenLedSwitch.o
-0 absdata ABS >60:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-20 absdata ABS >65:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-22 absdata ABS >66:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-24 absdata ABS >71:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-26 absdata ABS >72:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-28 absdata ABS >73:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-2C absdata ABS >74:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-2E absdata ABS >78:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-30 absdata ABS >79:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-32 absdata ABS >80:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-34 absdata ABS >81:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-36 absdata ABS >83:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-38 absdata ABS >84:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-3A absdata ABS >85:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-3C absdata ABS >86:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-3E absdata ABS >87:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-40 absdata ABS >88:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-42 absdata ABS >89:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-44 absdata ABS >93:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-46 absdata ABS >94:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-48 absdata ABS >95:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-4A absdata ABS >96:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-4C absdata ABS >97:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-4E absdata ABS >98:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-50 absdata ABS >99:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-52 absdata ABS >100:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-54 absdata ABS >101:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-56 absdata ABS >102:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-58 absdata ABS >105:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-5A absdata ABS >106:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-5C absdata ABS >107:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-5E absdata ABS >108:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-60 absdata ABS >109:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-62 absdata ABS >110:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-64 absdata ABS >111:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-66 absdata ABS >112:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-68 absdata ABS >113:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
-6A absdata ABS >114:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/SignalGenLedSwitch.asm
+$build/default/debug/Test.o
+0 absdata ABS >33:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/Test.asm
+2 absdata ABS >34:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/Test.asm
+8 absdata ABS >35:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/Test.asm
+A absdata ABS >36:/Users/zellwaltman/Documents/GitHub/Microcontroller_EE310/Assignments/Signal_Gen.X/Test.asm
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -129,7 +95,7 @@ $build/default/debug/SignalGenLedSwitch.o
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__Hspace_0 6C 0 ABS 0 - -
+__Hspace_0 C 0 ABS 0 - -
 __Hspace_1 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 60000A 0 ABS 0 - -
@@ -167,7 +133,7 @@ __Hudata_bank28 0 0 ABS 0 udata_bank28 -
 __Hudata_bank29 0 0 ABS 0 udata_bank29 -
 __Hudata_bank30 0 0 ABS 0 udata_bank30 -
 __Hudata_bank31 0 0 ABS 0 udata_bank31 -
-isa$xinst 0 0 ABS 0 - build/default/debug/SignalGenLedSwitch.o
+isa$xinst 0 0 ABS 0 - build/default/debug/Test.o
 __Hedata 0 0 ABS 0 edata -
 __Hudata 0 0 ABS 0 udata -
 __Hconfig 30000A 0 CONFIG 4 config -
@@ -177,7 +143,7 @@ __Hcode 0 0 ABS 0 code -
 __Hdata 0 0 ABS 0 data -
 __Lcode 0 0 ABS 0 code -
 __Ldata 0 0 ABS 0 data -
-__Habsdata 6C 0 ABS 0 absdata -
+__Habsdata C 0 ABS 0 absdata -
 __S0 0 0 ABS 0 - -
 __S1 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
@@ -204,7 +170,7 @@ __Ludata_bank29 0 0 ABS 0 udata_bank29 -
 __Ludata_bank30 0 0 ABS 0 udata_bank30 -
 __Ludata_bank31 0 0 ABS 0 udata_bank31 -
 __Lconfig 0 0 CONFIG 4 config -
-isa$std 1 0 ABS 0 - build/default/debug/SignalGenLedSwitch.o
+isa$std 1 0 ABS 0 - build/default/debug/Test.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
