@@ -19,6 +19,14 @@
  *  RD7 - R4
  * 
  * Outputs: PORTB (LEDs)
+ *  Bit 0 - RB0
+ *  Bit 1 - RB1
+ *  Bit 2 - RB2
+ *  Bit 3 - RB3
+ *  Bit 4 - RB4
+ *  Bit 5 - RB5
+ *  Bit 6 - RB6
+ *  Bit 7 - RB7
  * 
  * Setup: C- Simulator
  * Date: April 4th, 2025
@@ -37,6 +45,11 @@
 //---------------------
 // Initialization
 //---------------------
+
+int X_Input_REG;
+int Operation_REG;
+int Y_INPUT_REG;
+int Display_Result_REG;
 
 #include <xc.h> // must have this
 #include <stdio.h>
