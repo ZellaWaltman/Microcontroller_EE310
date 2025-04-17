@@ -54,7 +54,7 @@ void initialization();
 void InitializePorts();
 void __interrupt(irq(IRQ_INT0),base(0x4008)) INT0_ISR(void);
 void INTERRUPT_Initialize (void);
-void ADC_Initialize(void);
+//void ADC_Initialize(void);
 
 //------------------------------
 // Initialization Functions
@@ -64,7 +64,7 @@ void initialization()
 {
     InitializePorts();
     INTERRUPT_Initialize();
-    ADC_Initialize();
+    //ADC_Initialize();
     
     // Set the Secret Code
     Code = 13; // User will have to use PR1 once, and PR2 3 times
@@ -76,8 +76,8 @@ void InitializePorts()
     // Initializing Port A
     PORTA = 0; // Initialize PORTD
     TRISA = 0b00000001; // RA0 and RA1 are inputs
-    LATD = 0; // Initialize LATD
-    ANSELD = 0; // Digital I/O
+    LATA = 0; // Initialize LATD
+    ANSELA = 0; // Digital I/O
     WPUA = 0b00000001;   // For RA0 (Confirm)
     
     // Initializing Port B
@@ -85,7 +85,7 @@ void InitializePorts()
     TRISB = 0b00101111; // sets RB1, RB2, and RB3 as inputs
     LATB = 0; // Initialize LATB
     //ANSELB = 0;
-    ANSELB = 0b00000110; // RB1 and RB2 are Analog I/O for the ADC. Rest are Digital I/O.
+    ANSELB = 0b00000000; // RB1 and RB2 are Analog I/O for the ADC. Rest are Digital I/O.
     WPUB = 0b00000001;   // Weak Pull-Ups for  RB0, RB1, and RB2.
     
     // Initializing Port C
@@ -140,7 +140,7 @@ void INTERRUPT_Initialize (void)
     IVTBASEH = 0x40; // Set IVTBASEH to  0x40, default is 0x0008
     IVTBASEL = 0x08; // Set IVTBASEL to 0x08
 }
-
+/*
 void ADC_Initialize(void)
 {
     //Setup ADC
@@ -164,3 +164,4 @@ void ADC_Initialize(void)
     ADACQL = 0;
     ADACQL = 0;
 }
+*/

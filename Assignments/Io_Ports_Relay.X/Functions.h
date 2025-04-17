@@ -78,7 +78,7 @@ int PR2Pressed(void)
     }
 }*/
 
-/**/
+/*
 int readADC(unsigned char channel)
 {
     ADPCH = channel; // Select analog channel (e.g., 0x09 for RB1)
@@ -99,6 +99,7 @@ char PR2Pressed(void)
     int value = readADC(0b00001010); // Set RB2 as Analog channel
     return value >= PRESS; // ~3 V, if ADC is above this value = pressed (dark)
 }
+*/
 
 //--------------------------------------
 // Checking if Enter Button is Pressed
@@ -135,11 +136,10 @@ void UserInput()
     
         while (!ConfirmPressed()) // if Button 1 (Confirm Button) is NOT pressed
         {
+            
             // First Digit Input
             if (PR1 == 1) // Photoresistor 1 is pressed
             {
-                Input1++;
-                
                 
                 sevenSeg(Input1, 0); // Display 1st Input
 
@@ -148,12 +148,13 @@ void UserInput()
                 while (PR1 == 1); // Wait until PR1 is released
 
                 __delay_ms(100); // Debounce Delay
+                
             }
 
             // Second Digit Input
-            if (PR2 = 1) // Photoresistor 2 is triggered
+            if (PR2 == 1) // Photoresistor 2 is triggered
             {
-                Input2++;
+                
                 sevenSeg(Input2, 1); // Display 2nd Input, with DP on to indicate Second Digit
 
                 __delay_ms(100); // Debounce Delay
@@ -161,6 +162,8 @@ void UserInput()
                 while (PR2 == 1); // Wait until PR2 is released
 
                 __delay_ms(100); // Debounce Delay
+                
+                Input2++;
             }
         }
     
