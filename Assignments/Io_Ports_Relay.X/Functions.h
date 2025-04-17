@@ -138,32 +138,35 @@ void UserInput()
         {
             
             // First Digit Input
-            if (PR1 == 1) // Photoresistor 1 is pressed
+            if (PORTBbits.RB1 == 1) // Photoresistor 1 is pressed
             {
                 
+               
+
+                __delay_ms(100); // Debounce Delay
+
+                while (PORTBbits.RB1  == 1); // Wait until PR1 is released
+
+                __delay_ms(100); // Debounce Delay
+                
+                Input1++;
                 sevenSeg(Input1, 0); // Display 1st Input
-
-                __delay_ms(100); // Debounce Delay
-
-                while (PR1 == 1); // Wait until PR1 is released
-
-                __delay_ms(100); // Debounce Delay
                 
             }
 
             // Second Digit Input
-            if (PR2 == 1) // Photoresistor 2 is triggered
+            if (PORTBbits.RB2 == 1) // Photoresistor 2 is triggered
             {
-                
-                sevenSeg(Input2, 1); // Display 2nd Input, with DP on to indicate Second Digit
+
 
                 __delay_ms(100); // Debounce Delay
 
-                while (PR2 == 1); // Wait until PR2 is released
+                while (PORTBbits.RB2 == 1); // Wait until PR2 is released
 
                 __delay_ms(100); // Debounce Delay
                 
                 Input2++;
+                sevenSeg(Input2, 1); // Display 2nd Input, with DP on to indicate Second Digit
             }
         }
     
