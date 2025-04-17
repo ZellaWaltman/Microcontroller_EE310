@@ -5,9 +5,10 @@
 
  * This is a header file which contains functions for the main.asm file
  * These functions include:
- *    _setupPortD: Sets up PORTD for Output
- *    _setupPortB: Sets up PORTB for Input
- *    _check_keypad: Checks which button is being pressed on the keypad
+ *    sevenSeg: Sets up Seven Segment increment and call
+ *    ConfirmPressed: Checks if Enter Code Button has been pressed
+ *    UserInput: Reads and Checks user inputs and increments input numbers, gets final code input
+ *    DetermineInput: Checks if input is correct or incorrect, and behaves accordingly
  */
 
 //------------------------------
@@ -21,7 +22,7 @@
 // Functions
 //------------------------------
 
-void sevenSeg(int index, int secondNumInput)
+void sevenSeg(int index, int secondNumInput) // Seven Segment Display
 {
     if ( index < 0 || index > 9 )
     {
@@ -35,71 +36,6 @@ void sevenSeg(int index, int secondNumInput)
         PORTD |= 0b10000000; // Turn on little dot to indicate second number
     }
 }
-
-//----------------------------------------------------
-// Analog to Digital Conversions for Photoresistors
-//----------------------------------------------------
-
-/*int readADC(unsigned char channel)
-{
-    ADPCH = channel; // Select analog channel (e.g., 0x09 for RB1)
-    __delay_us(10); // Acquisition delay
-    ADCON0bits.GO = 1; // Start conversion
-    while (ADCON0bits.GO); // Wait for completion
-    light = (ADRESH*256) | ADRESL; // Combine Upper & Lower
-    PRESS = light * 1.2;
-}
-
-int PR1Pressed(void)
-{
-    int value = readADC(0b00001001); // Set RB1 as Analog channel
-    ADCValue = (ADRESH*256) | ADRESL; // Get ADC Value
-    if (ADCValue >= PRESS) // If PR1 is Pressed
-    {
-        return 1;
-    }
-    else
-    {
-        return 0; // ~3 V, if ADC is above this value = pressed (dark)
-    }
-}
-
-int PR2Pressed(void)
-{
-    int value = readADC(0b00001010); // Set RB2 as Analog channel
-    ADCValue = (ADRESH*256) | ADRESL; // Get ADC Value
-    if (ADCValue >= PRESS) // If PR1 is Pressed
-    {
-        return 1;
-    }
-    else
-    {
-        return 0; // ~3 V, if ADC is above this value = pressed (dark)
-    }
-}*/
-
-/*
-int readADC(unsigned char channel)
-{
-    ADPCH = channel; // Select analog channel (e.g., 0x09 for RB1)
-    __delay_us(10); // Acquisition delay
-    ADCON0bits.GO = 1; // Start conversion
-    while (ADCON0bits.GO); // Wait for completion
-    return (ADRESH*256) | ADRESL; // Return 10-bit result
-}
-
-char PR1Pressed(void)
-{
-    int value = readADC(0b00001001); // Set RB1 as Analog channel
-    return value >= PRESS; // ~3 V, if ADC is above this value = pressed (dark)
-}
-
-char PR2Pressed(void)
-{
-    int value = readADC(0b00001010); // Set RB2 as Analog channel
-    return value >= PRESS; // ~3 V, if ADC is above this value = pressed (dark)
-}
-*/
 
 //--------------------------------------
 // Checking if Enter Button is Pressed
@@ -136,36 +72,31 @@ void UserInput()
     
         while (!ConfirmPressed()) // if Button 1 (Confirm Button) is NOT pressed
         {
-            
+           
             // First Digit Input
             if (PORTBbits.RB1 == 1) // Photoresistor 1 is pressed
             {
-                
-               
-
-                __delay_ms(100); // Debounce Delay
+                __delay_ms(200); // Debounce Delay
 
                 while (PORTBbits.RB1  == 1); // Wait until PR1 is released
 
-                __delay_ms(100); // Debounce Delay
+                __delay_ms(200); // Debounce Delay
                 
-                Input1++;
+                Input1++; // Increment Input 1
                 sevenSeg(Input1, 0); // Display 1st Input
-                
             }
-
+            
             // Second Digit Input
             if (PORTBbits.RB2 == 1) // Photoresistor 2 is triggered
             {
-
-
-                __delay_ms(100); // Debounce Delay
+                
+                __delay_ms(200); // Debounce Delay
 
                 while (PORTBbits.RB2 == 1); // Wait until PR2 is released
 
-                __delay_ms(100); // Debounce Delay
+                __delay_ms(200); // Debounce Delay
                 
-                Input2++;
+                Input2++; // Increment Input 2
                 sevenSeg(Input2, 1); // Display 2nd Input, with DP on to indicate Second Digit
             }
         }
@@ -173,25 +104,29 @@ void UserInput()
     // Once Confirm Button is pressed
     PORTD = 0; // Clear Display
 
-    FinalInput = (Input1*10)+Input2; 
+    FinalInput = (Input1*10)+Input2; // Moves input 1 to the 10s place and adds inputs 1 & 2 to get the code
 
 }
 
 void DetermineInput()
 {
-    if (Code == FinalInput) // Turn Correct LED ON for Five Seconds if code is correct
+    if (Code == FinalInput) // Turn Correct LED ON for 3 Seconds if code is correct
     {
+        PIR1bits.INT0IF = 0; // Clear the interrupt flag when done // Clear the interrupt flag for INT0
+        PORTCbits.RC6 = 0; // Make sure Buzzer on RC6 is off
+        
         PORTCbits.RC5 = 1;
-        __delay_ms(5000);
+        __delay_ms(3000);
         PORTCbits.RC5 = 0;
     }
-    else // If Incorrect, turn on Buzzer for 3 seconds
+    
+    else // If Incorrect, turn on Buzzer for 1 second
     {
         PORTCbits.RC6 = 1;
-        __delay_ms(3000);
+        __delay_ms(1000);
         PORTCbits.RC6 = 0; 
     }
     
-    FinalInput = 0;
+    FinalInput = 0; // Clear FinalInput to reset
     
 }

@@ -3,7 +3,13 @@
  * Title: IO Ports Relay
  * ---------------------
  * Program Details:
- *      This program
+ *      This program is designed to mimic a lockbox. A user will input a code by
+ * pressing two photoresistors, the first photoresistor corresponding to the most
+ * significant digit and the second photoresistor corresponding to the least
+ * significant digit. The user may also press an interrupt button which will 
+ * interrupt the program and trigger a buzzer. If the user input matches the 
+ * secret code, a motor will turn on. If the entered code is incorrect, a buzzer
+ * will go off.
  * 
  * Inputs: PORTB
  * PORTB Mapping:
@@ -12,9 +18,7 @@
  *  RB2 - Photoresistor 2 (Second Input)
  *  RB5 - Confirm Code Entry button
  * 
- * 
- * 
- * Outputs: PORTC, PORTD (7 Segment0
+ * Outputs: PORTC, PORTD (7 Segment)
  * PORTC Mapping:
  *   RC3 - System ON LED
  *   RC5 - Motor Output, correct code
@@ -48,23 +52,18 @@
 // Initialization
 //---------------------
 
-
-//#include <stdio.h>
-//#include <stdlib.h>
-//#include <stdint.h> // For standard integer types like uint8_t
-
 #include <xc.h> // must have this
 #include "ConfigureFile.inc"
 #include "Initialization.h"
 #include "Functions.h"
 
 int main(void) {
-    
-    initialization(); // Initialize everything, located in "Initialization.h"
-    
+
     while(1)
     {
-        UserInput();
-        DetermineInput();
+        initialization(); // Initialize everything, located in "Initialization.h"
+        PORTCbits.RC3 = 1; // Turn System LED on to indicate the system is on
+        UserInput(); // Get User Input
+        DetermineInput(); // Determine if User Input is correct
     }
 }  
