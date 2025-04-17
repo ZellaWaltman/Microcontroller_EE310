@@ -57,13 +57,6 @@ void initialization()
 
 void InitializePorts()
 {
-    // Initializing Port A
-    PORTA = 0; // Initialize PORTD
-    TRISA = 0b00000001; // RA0 and RA1 are inputs
-    LATA = 0; // Initialize LATD
-    ANSELA = 0; // Digital I/O
-    WPUA = 0b00000001;   // For RA0 (Confirm)
-    
     // Initializing Port B
     PORTB = 0; // Initialize PORTB
     TRISB = 0b00101111; // sets RB1, RB2, and RB3 as inputs
@@ -73,9 +66,9 @@ void InitializePorts()
     WPUB = 0b00000001;   // Weak Pull-Ups for  RB0, RB1, and RB2.
     
     // Initializing Port C
-    PORTC = 0; // Initialize PORTD
+    PORTC = 0; // Initialize PORTC
     TRISC = 0; // PORTC is an Output
-    LATC = 0; // Initialize LATD
+    LATC = 0; // Initialize LATC
     ANSELC = 0; // Digital I/O
     
     // Initializing Port D
