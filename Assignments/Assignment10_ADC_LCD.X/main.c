@@ -10,6 +10,7 @@
  * Inputs: ANA1 (RA1 - The ADC Input), PORTC (RC2 - IOC Interrupt button)
  * 
  * Outputs: PORTB, PORTD, RA0 (Interrupt LED)
+ * 
  * PORTB Mapping:
  *   RB0 - LCD Register Select Pin
  *   RB1 - LCD Enable Pin
@@ -102,7 +103,7 @@ void main(void) {
         /*// LUX CONVERSION
         //------------------------
      
-        float lux = digital;
+        float lux = digital/10;
        
         __delay_ms(200);
         
