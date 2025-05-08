@@ -32,7 +32,7 @@ void TMR2_Initialize(void)
     // Set TMR2 to the options selected in the User Interface
 
     // T2CS FOSC/4; 
-    T2CLKCON = 0x01;
+    T2CLKCON = 0x31;
 
     // T2PSYNC Not Synchronized; T2MODE Software control; T2CKPOL Rising Edge; T2CKSYNC Not Synchronized; 
     T2HLT = 0x00;
@@ -50,7 +50,7 @@ void TMR2_Initialize(void)
     PIR4bits.TMR2IF = 0;
 
     // T2CKPS 1:1; T2OUTPS 1:1; TMR2ON on; 
-    T2CON = 0xA0;
+    T2CON = 0xB0;
 }
 
 //void TMR2_ModeSet(TMR2_HLT_MODE mode)
@@ -175,10 +175,10 @@ void PWM2_Initialize(void)
 	CCP2CON = 0x8C;  // enable / Right-aligned format  
 	
 	// RH 127; 
-	CCPR2H = 0x0;    
+	CCPR2H = 0x01;    
 	
 	// RL 192; 
-	CCPR2L = 0x0f;    
+	CCPR2L = 0x9A;    
 
 	// Selecting Timer 2
 	CCPTMRS0bits.C2TSEL = 0x1;

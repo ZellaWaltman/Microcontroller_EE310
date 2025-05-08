@@ -25,16 +25,12 @@
 
 #include <xc.h> // must have this
 #include "PWM.h" // must have this
-#include "configwords.h" // must have this -  XC8_ConfigFile.h
-#include "../../../../../Program Files/Microchip/xc8/v2.40/pic/include/proc/pic18f46k42.h"
+#include "ConfigureFile.inc" // must have this -  XC8_ConfigFile.h
+//#include "../../../../../Program Files/Microchip/xc8/v2.40/pic/include/proc/pic18f46k42.h"
 //#include "C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f46k42"
 
-
-#define _XTAL_FREQ 4000000      // Fosc  frequency for _delay()  library
-#define FCY    _XTAL_FREQ/4     // system clock is 1 usec
-
 #define myLED  PORTBbits.RB0
-#define PWM2_INITIALIZE_DUTY_VALUE 100
+#define PWM2_INITIALIZE_DUTY_VALUE 410
 
 uint16_t checkdutyCycle;
 char preScale;

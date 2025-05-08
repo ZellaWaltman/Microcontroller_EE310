@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=TMR0_INT.c
+SOURCEFILES_QUOTED_IF_SPACED=PWM_TMR2.c TMR0_INT.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/TMR0_INT.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/TMR0_INT.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/PWM_TMR2.p1 ${OBJECTDIR}/TMR0_INT.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/PWM_TMR2.p1.d ${OBJECTDIR}/TMR0_INT.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/TMR0_INT.p1
+OBJECTFILES=${OBJECTDIR}/PWM_TMR2.p1 ${OBJECTDIR}/TMR0_INT.p1
 
 # Source Files
-SOURCEFILES=TMR0_INT.c
+SOURCEFILES=PWM_TMR2.c TMR0_INT.c
 
 
 
@@ -88,6 +88,14 @@ MP_PROCESSOR_OPTION=18F47K42
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/PWM_TMR2.p1: PWM_TMR2.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/PWM_TMR2.p1.d 
+	@${RM} ${OBJECTDIR}/PWM_TMR2.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/PWM_TMR2.p1 PWM_TMR2.c 
+	@-${MV} ${OBJECTDIR}/PWM_TMR2.d ${OBJECTDIR}/PWM_TMR2.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/PWM_TMR2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/TMR0_INT.p1: TMR0_INT.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/TMR0_INT.p1.d 
@@ -97,6 +105,14 @@ ${OBJECTDIR}/TMR0_INT.p1: TMR0_INT.c  nbproject/Makefile-${CND_CONF}.mk
 	@${FIXDEPS} ${OBJECTDIR}/TMR0_INT.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
+${OBJECTDIR}/PWM_TMR2.p1: PWM_TMR2.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/PWM_TMR2.p1.d 
+	@${RM} ${OBJECTDIR}/PWM_TMR2.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/PWM_TMR2.p1 PWM_TMR2.c 
+	@-${MV} ${OBJECTDIR}/PWM_TMR2.d ${OBJECTDIR}/PWM_TMR2.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/PWM_TMR2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/TMR0_INT.p1: TMR0_INT.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/TMR0_INT.p1.d 

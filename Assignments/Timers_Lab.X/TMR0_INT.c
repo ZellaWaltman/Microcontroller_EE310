@@ -8,6 +8,7 @@
  */
 
 #include <xc.h> // must have this
+#include "ConfigureFile.inc"
 // You may need this - change the path
 //#include "../../../../../Program Files/Microchip/xc8/v2.40/pic/include/proc/pic18f46k42.h"
 //#include "C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f46k42"
@@ -25,7 +26,7 @@ void TMR0_Initialize(void)
     T0CON1 = 0x48;
 
     // TMR0H ;  The total division will be (FOSC/4)/(4+1)x256)))
-    TMR0H = 0x4; 
+    TMR0H = 38; 
 
     // TMR0L 0; 
     TMR0L = 0x00;

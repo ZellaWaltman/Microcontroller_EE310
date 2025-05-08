@@ -87,7 +87,8 @@ void main(void) {
         
         digital = (ADRESH*256) | (ADRESL); // Combines 8-bit LSB and 2-bit MSB
         
-        // VOLTAGE CONVERSION
+        /*
+         // VOLTAGE CONVERSION
         //------------------------
         
         // define voltage = Vref/4096 (note that voltage is float type)
@@ -98,11 +99,12 @@ void main(void) {
         strcat(data," V");	// Concatenate result and unit to print
         
         LCD_Position(2,0,data); // Print Voltage on 2nd line of LCD
+        */
         
-        
-        /*// LUX CONVERSION
+        // LUX CONVERSION
         //------------------------
-     
+        
+        /*
         float lux = digital/10;
        
         __delay_ms(200);
